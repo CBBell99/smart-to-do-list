@@ -30,6 +30,23 @@ body {
   background-color: #11ad69;
   color: #b4dad1;
   height: calc(100% - 300px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.to_do_1 .to_do_2 .to_do_3 .to_do_4 {
+text-align: left;
+}
+
+h4 {
+  color: #b4dad1;
+  font-size: 40px;
+  font-weight: normal;
+  padding: 0px;
+  margin: 0px;
 }
 
 

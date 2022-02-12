@@ -19,6 +19,7 @@
     border-bottom: 5px solid #550e6f;
     margin: 0px;
     padding: 0px;
+    margin-bottom: 20px;
     display: flex;
   flex-direction: row;
   }
