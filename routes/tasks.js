@@ -25,9 +25,13 @@ module.exports = (db) => {
       });
   });
 
+  router.post('/item', (req, res) => {
+
+    console.log('hello item', req.body)
+  });
 
 
-  // router.get("/dogs", (req, res) => {
+  // router.get("./dogs", (req, res) => {
   //   const result = {
   //     name: 'doggy name',
   //     breed: 'doggy name'
