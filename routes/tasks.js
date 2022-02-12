@@ -4,9 +4,10 @@
  *   these routes are mounted onto /widgets
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
-
+//pg stuff
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -23,5 +24,27 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+
+
+  // router.get("/dogs", (req, res) => {
+  //   const result = {
+  //     name: 'doggy name',
+  //     breed: 'doggy name'
+  //   };
+  //   res.json(result);
+  // });
+
+  // router.post("/dog", (req, res) => {
+  //   const body = req.body;
+  //   const result = {
+  //     name: 'doggy name',
+  //     breed: 'doggy name'
+  //   };
+  //   res.json(body);
+  // });
+
+
+  //do not delete
   return router;
 };
