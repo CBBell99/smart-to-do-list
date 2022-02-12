@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: top;
   padding-top: 25px;
 }
 
@@ -49,4 +49,7 @@ h4 {
   margin: 0px;
 }
 
+li {
+  list-style-type: none;
+}
 
