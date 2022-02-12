@@ -26,15 +26,19 @@ Daily check ins x 2
 Update over discord when we’re working on something
 
 #### Stanislav:
-* Look into API - “ investigate how to balance the accurate categorization of items with having to deal with multiple API endpoints”
+-[x] Look into API - “ investigate how to balance the accurate categorization of items with having to deal with multiple API endpoints”
+-[] Route Set Up
 
 #### Chris: 
-* Look at setting up our github - following Francis’ folders 
-Database setup 
+-[x] Look at setting up our github - following Francis’ folders 
+-[x] Database wireframe
+-[] Route Set Up  
+-[] Databasing Schema / User set up 
 
 #### Lindsay: 
-* Create wireframing 
-
+-[x] Create wireframing 
+-[] User Scenarios 
+-[] HTML/CSS set up 
 
 ### Steps: 
 - [x] Pick a project 
@@ -43,12 +47,19 @@ Database setup
 - [x] ERD
 - [ ] Routes
 - [x] Wireframing 
-- [ ] reate a document of all of the things we need to code?
+- [ ] Create a document of all of the things we need to code?
 - [ ] Set up HTML / CSS - framework for to do lists
 - [ ] Set up Javascript -  form to push to page 
 - [ ] Set up four categories based on input 
 - [ ] Set up APIs based on those inputs once working
 - [ ] Set up database to store information
+
+What are the pages we need?
+
+Index 
+CSS Fies 
+Server file 
+Helper Functions (refractor)
 
 
 ### Things to consider:
