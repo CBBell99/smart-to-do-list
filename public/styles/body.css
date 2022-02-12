@@ -1,7 +1,35 @@
 /* Includes styles for the to do lists - green background section and below */
 
+/*
+ * Global layout stuff
+ */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+body {
+  color: #11ad69;
+  background-color: #b4dad1;
+  font-size: 24px;
+  font-family: 'Cabin', sans-serif;
+
+}
+
+
+/*
+ * Body stuff
+ */
+
 .to_do_lists {
   background-color: #11ad69;
   color: #b4dad1;
   height: calc(100% - 300px);
 }
+
+
