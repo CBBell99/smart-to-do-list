@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Meta Information -->
+    <title>The Big To-Do</title>
+
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Our Internal CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/body.css" type="text/css" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+    <!-- External JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.full.min.js" integrity="sha512-wb3lqal2VtYhmlPAr232VP+Zus676CFAEYdywxIUSxG6F/X9WhN6SpREkWUdwBvMpd6gCKuKTGHhdum6m1wOvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Our Internal JS -->
+
+   </head>
+
+
+  <body>
+
+  <!-- Top Bar
+      CSS: nav.css-->
+
+    <!-- Main Title - Large Header  -->
+    <nav class='navigation'>
+      <h2>The Big To Do</h2>
+
+    <!-- Login Bar under Main Title   -->
+
+      <div class ="loginbar">
+        &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="loginbarlink">login </a>
+        &nbsp; &nbsp; &nbsp; &nbsp; <a href="#" class="loginbarlink">logout </a>
+        &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#" class="loginbarlink">register </a>
+        </div>
+        <div class ='slogan'>The magic to-do list for everything.</div>
+    </nav>
+
+
+  <!-- Item Input Section
+        CSS header.css -->
+
+      <section class ="to_do_items">
+        <h3>What do you need to remember?</h3>
+          <div class = "input">
+
+            <form class="center" action="/item" method="POST" id="submit_item">
+              <textarea name="text" id="item_input"  type="text" placeholder="Type in an item here."></textarea>
+             <button type="submit" class="submitbutton">Submit</button>
+            </form>
+          </div>
+      </section>
+
+ <!-- To-Do Lists Section // new background colour
+      CSS: body.css-->
+      <section class = "to_do_lists">
+ <!-- 4 To Do Lists
+      Should all go side by side across  -->
+      Jason Statham
+
+
+
+      </section>
+
+  </body>
+</html>

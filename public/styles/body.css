@@ -1,0 +1,7 @@
+/* Includes styles for the to do lists - green background section and below */
+
+.to_do_lists {
+  background-color: #11ad69;
+  color: #b4dad1;
+  height: calc(100% - 300px);
+}
