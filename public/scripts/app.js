@@ -1,9 +1,20 @@
 // Client facing scripts here
 
 
-$(document).ready(function() {
 
-  const inputData = task.description
+$(document).ready(function() {
+  // const inputData = $('#item_input').val()
+
+  // console.log(inputData);
+
+  console.log('hello')
+
+  $('#submitbutton').on('click', function() {
+    console.log('hello')
+    event.preventDefault();
+    const inputData = $('#item_input').val()
+    console.log(inputData)
+  })
 
   const createNewItem = function(inputData) {
 

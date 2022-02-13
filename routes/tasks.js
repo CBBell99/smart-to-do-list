@@ -12,7 +12,7 @@ const pool = require('pg')
 module.exports = (db) => {
   router.get("/", (req, res) => {
     let query = `SELECT * FROM tasks`;
-    console.log(query);
+    // console.log(query);
     db.query(query)
       .then(data => {
         const tasks = data.rows;
@@ -32,16 +32,15 @@ module.exports = (db) => {
 
 
   router.post('/item', (req, res) => {
-    console.log('new task:', req.body);
     // let newTask = req.body.text
     const newTask = req.body
     db.query(
       `INSERT INTO tasks (user_id, category, description) VALUES
-      (1, 'Buy',$1) RETURNING *`, [newTask])
+      (1, 'Buy', $1) RETURNING *`, [newTask.text])
 
       .then(data => {
         const task = data.rows[0]
-        console.log(task.description)
+        // console.log(task.description)
         res.json({ task });
 
       })
