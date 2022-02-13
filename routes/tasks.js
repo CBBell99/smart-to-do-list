@@ -32,11 +32,11 @@ module.exports = (db) => {
     console.log('new task:', req.body)
     let newTask = req.body.text;
     db.query(
-      `INSERT INTO tasks (category, description) VALUES
-      ('Buy',$1) RETURNING *`, [newTask]
+      `INSERT INTO tasks (user_id, category, description) VALUES
+      (1, 'Buy' ,$1) RETURNING *`, [newTask]
     );
 
-    console.log('buy', newTask)
+    console.log(newTask)
 
 
 
