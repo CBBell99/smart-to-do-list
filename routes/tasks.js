@@ -28,27 +28,38 @@ module.exports = (db) => {
 
   //post route when submit clicked.  Send 400 error on empty field
   //text becomes a database entry.
-  router.post('/item', (req, res) => {
-    console.log('new task:', req.body.text)
-    let newTask = req.body.text;
 
-    // if (newTask.includes('toothpaste'))
+
+
+  router.post('/item', (req, res) => {
+    console.log('new task:', req.body);
+    // let newTask = req.body.text
+    const newTask = req.body
     db.query(
       `INSERT INTO tasks (user_id, category, description) VALUES
-      (1, 'Buy' ,$1) RETURNING *`, [newTask]
-    );
-    // res.json(newTask.rows[0]);
-    if (newTask.includes('Earls'))
-      db.query(
-        `INSERT INTO tasks (user_id, category, description) VALUES
-        (1, 'Eat' ,$1) RETURNING *`, [newTask]
-      );
-    // res.redirect('/')
-  });
+      (1, 'Buy',$1) RETURNING *`, [newTask])
 
-  router.post('/item/:u', (req, res) => {
+      .then(data => {
+        const task = data.rows[0]
+        console.log(task.description)
+        res.json({ task });
 
-  });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500)
+
+          .json({ error: err.message })
+      })
+  })
+
+  // router.put('/item:i', (req, res) => {
+  //   console.log(req.params)
+  // })
+
+
+
+
 
 
 
