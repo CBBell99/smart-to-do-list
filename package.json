@@ -12,15 +12,18 @@
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chalk": "^2.4.2",
+    "chance": "^1.1.8",
     "dotenv": "^2.0.0",
     "ejs": "^2.6.2",
-    "express": "^4.17.1",
-    "morgan": "^1.9.1",
+    "express": "^4.17.2",
+    "md5": "^2.3.0",
+    "morgan": "^1.10.0",
     "pg": "^8.5.0",
     "sass": "^1.35.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.10"
+    "nodemon": "^2.0.15"
   }
 }

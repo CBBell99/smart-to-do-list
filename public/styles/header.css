@@ -1,7 +1,6 @@
 /* Includes styles for the center - "What do you need to remember", input form, submit button */
 
 .to_do_items {
-  justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -19,24 +18,20 @@
     border-bottom: 5px solid #550e6f;
     margin: 0px;
     padding: 0px;
+    margin-bottom: 20px;
     display: flex;
   flex-direction: row;
+  font-weight: 400;
+
+  }
+  textarea {
+    height: 35px;
+    font-size: 28px;
   }
 
-  #cursor {
-    background: lime;
-    margin-left: 3px;
-    -webkit-animation: blink 1.5s infinite;
-    width: 5px;
-    height: 2em;
-    margin-bottom: 2px;
-  }
-
-  @-webkit-keyframes blink {
-    0% {background: #550e6f}
-    50% {background: #ffd33e}
-    100% {background: #550e6f}
-  }
+  textarea:focus, input:focus{
+    outline: none;
+     }
 
   #item_input {
     background-color: #b4dad1;
@@ -46,5 +41,16 @@
   }
 
   .submitbutton {
-    line-height: 100%;
+    line-height: 30px;
+    margin-bottom: 10px;
+    border: 3px solid #550e6f;
+    border-radius: 2px;
+    background-color: #550e6f;
+    color: #b4dad1;
+    font-size: 28px;
+  }
+
+  .submitbutton:hover {
+    background-color: #11ad69;
+    border: 3px solid #11ad69;
   }
