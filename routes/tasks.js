@@ -7,11 +7,11 @@
 //pg stuff
 const express = require('express');
 const router = express.Router();
-
+const pool = require('pg')
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM widgets`;
+    let query = `SELECT * FROM tasks`;
     console.log(query);
     db.query(query)
       .then(data => {
@@ -25,9 +25,21 @@ module.exports = (db) => {
       });
   });
 
-  router.post('/item', (req, res) => {
 
-    console.log('hello item', req.body)
+  //post route when submit clicked.  Send 400 error on empty field
+  //converts text
+  router.post('/item', (req, res) => {
+    console.log('new task:', req.body)
+    let newTask = req.body.text;
+    db.query(
+      `INSERT INTO tasks (category, description) VALUES
+      ('Buy',$1) RETURNING *`, [newTask]
+    );
+
+    console.log('buy', newTask)
+
+
+
   });
 
 
