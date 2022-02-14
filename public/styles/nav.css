@@ -4,12 +4,11 @@
   box-sizing: border-box;
   width: 100%;
   color: #11ad69;
-  padding: 0px;
+padding: 0px;
   align-items: center;
   margin: 0;
   justify-content: space-between;
   top: 0px;
-  margin-top: -15px;
 
 }
 
@@ -38,15 +37,16 @@
 
 .slogan {
   color: #11ad69;
-  font-size:2em;
+  font-size:1.7em;
 }
 
 h2 {
   margin: 1px;
   font-family: 'Cabin', sans-serif;
-  font-size: 7em;
+  font-size: 6em;
   padding: 0px;
   margin-bottom: -25px;
+  margin-top: -40px;
   background-color: #b4dad1;
   z-index: 1000;
 
