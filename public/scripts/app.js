@@ -32,32 +32,40 @@ $(document).ready(function() {
 
   const loadList = function() {
     $.ajax({
-      url: '/api/tasks/item',
+      url: "/api/tasks",
       method: "GET",
       dataType: "JSON"
-    })
-      .then(function(data) {
-        renderChecklist(data)
-      });
+    }).then(function(data) {
+      renderChecklist(data)
+    });
   };
+  // const loadList = function() {
+  //   $.get('/tasks/item')
+  //     .then((data) => {
+  //       renderChecklist(data.tasks)
+  //     })
+  // }
 
   loadList();
 
 
-  $('#submitbutton').on('submit', function(event) {
+
+  $('#submit_item').on('submit', function(event) {
     event.preventDefault();
     const inputData = $('#item_input').val()
-    console.log(inputData)
-    $.ajax({
-      url: "/item",
+    return $.ajax({
+
+      url: "/api/tasks/item/",
       method: "POST",
-      data: inputData
+      data: { text: inputData }
     })
       .then(() => {
+        console.log("sucess")
+        $("form").trigger("reset");
+        // $('#item_input').val('')
         loadList()
       })
   })
-
 
   // console.log(renderChecklist(inputData));
 

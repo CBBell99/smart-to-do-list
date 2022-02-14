@@ -6,6 +6,7 @@
  */
 //pg stuff
 const express = require('express');
+const { error } = require('jquery');
 const router = express.Router();
 const pool = require('pg')
 
