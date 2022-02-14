@@ -48,7 +48,7 @@ module.exports = (db) => {
       })
   })
 
-  // GET task by task ID
+  // GET task by ID
   router.get("/item/:id", (req, res) => {
     console.log(req.params)
     let query = `SELECT * FROM tasks
@@ -69,9 +69,25 @@ module.exports = (db) => {
 
 
 
-  router.delete('/item/:id', (req, res) => {
-
+  // DELETE task by id
+  router.delete('/item/:id/delete', (req, res) => {
+    console.log(req.params)
+    const queryString = `DELETE FROM tasks
+    WHERE id = ${req.params.id}`
+    db.query(queryString)
+      .then(data => {
+        const tasks = data.rows;
+        res.json({ tasks });
+        delete tasks;
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   })
+
+
   // router.get('/item', (req, res) => {
   //   console.log("hello")
   // })
