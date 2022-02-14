@@ -5,24 +5,14 @@
 $(document).ready(function() {
 
 
-  $('#submitbutton').on('click', function(event) {
-    event.preventDefault();
-    const inputData = $('#item_input').val()
-    console.log(inputData)
-  })
 
   const createNewItem = function(data) {
     let $todo4 = `
-      <td>CHECKBOX</td>
-      <td>${data.content.body}</td>
+    <td>CHECKBOX</td>
+    <td>${data.content.body}</td>
     `
     console.log(data.content.body)
 
-    // const $checkbox = $('<td>').text('checkbox');
-    // const $newItem = $('<td>').text(`${inputData.content.text}`);
-    // const $itemBox = $('<tr>').addClass('first');
-    // $itemBox.append($checkbox, $newItem);
-    // const $table = $('<table>').addClass('to_do_4')
 
     return $todo4
   }
@@ -30,13 +20,30 @@ $(document).ready(function() {
 
 
   const renderChecklist = function(inputData) {
-
-    $('#first').append(inputData);
+    let data = createNewItem(inputData)
+    $('#first').append(data);
   }
 
-  renderChecklist(createNewItem)
+  const loadList = function() {
+    $.ajax({
+      url: '/',
+      method: "POST",
+      dataType: "JSON"
+    })
+      .then(function(data) {
+        renderChecklist(data)
+      })
+  }
 
-  // renderChecklist(inputData);
+  loadList();
+
+
+  $('#submitbutton').on('submit', function(event) {
+    event.preventDefault();
+    const inputData = $('#item_input').val()
+    console.log(inputData)
+  })
+
 
   // console.log(renderChecklist(inputData));
 
