@@ -34,6 +34,8 @@ $(document).ready(function() {
     $('#first').append(inputData);
   }
 
+  renderChecklist(createNewItem)
+
   // renderChecklist(inputData);
 
   // console.log(renderChecklist(inputData));
