@@ -40,7 +40,7 @@
     min-width: 600px;
   }
 
-  .submitbutton {
+  #submitbutton {
     line-height: 30px;
     margin-bottom: 10px;
     border: 3px solid #550e6f;
@@ -50,7 +50,7 @@
     font-size: 28px;
   }
 
-  .submitbutton:hover {
+  #submitbutton:hover {
     background-color: #11ad69;
     border: 3px solid #11ad69;
   }
