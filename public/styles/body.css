@@ -80,7 +80,11 @@ h4 {
 input[type=checkbox] {
   position: relative;
   cursor: pointer;
+  top: -5px;
+  left: -10px;
+
 }
+
 input[type=checkbox]:before {
   content: "";
   display: block;
@@ -91,7 +95,6 @@ input[type=checkbox]:before {
   height: 22px;
   border: 0.1em solid #ffd33e;
   place-content: center;
-  margin-bottom: 25px;
 
 
 }
@@ -108,5 +111,4 @@ input[type=checkbox]:checked:after {
   position: absolute;
   top: 1px;
   left: 6px;
-  margin-bottom: 25px;
 }
