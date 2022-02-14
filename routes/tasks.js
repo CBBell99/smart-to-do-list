@@ -40,9 +40,8 @@ module.exports = (db) => {
 
       .then(data => {
         const task = data.rows[0]
-        // console.log(task.description)
+        console.log(task.description)
         res.json({ task });
-
       })
       .catch(err => {
         console.log(err);

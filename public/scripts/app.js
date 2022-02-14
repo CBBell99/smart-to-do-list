@@ -3,43 +3,40 @@
 
 
 $(document).ready(function() {
-  // const inputData = $('#item_input').val()
 
-  // console.log(inputData);
 
-  console.log('hello')
-
-  $('#submitbutton').on('click', function() {
-    console.log('hello')
+  $('#submitbutton').on('click', function(event) {
     event.preventDefault();
     const inputData = $('#item_input').val()
     console.log(inputData)
   })
 
-  const createNewItem = function(inputData) {
+  const createNewItem = function(data) {
+    let $todo4 = `
+      <td>CHECKBOX</td>
+      <td>${data.content.body}</td>
+    `
+    console.log(data.content.body)
 
-    const $checkbox = $('<td>').text('checkbox');
-    const $newItem = $('<td>').text(`${inputData.content.text} hello`);
-    const $itemBox = $('<tr>').addClass('first');
-
+    // const $checkbox = $('<td>').text('checkbox');
+    // const $newItem = $('<td>').text(`${inputData.content.text}`);
+    // const $itemBox = $('<tr>').addClass('first');
     // $itemBox.append($checkbox, $newItem);
-
     // const $table = $('<table>').addClass('to_do_4')
 
     return $todo4
   }
 
 
-  const renderChecklist = function(inputData) {
-    const $insideOfTable = ('#to_do_4').find('<table>')
-    const $insideOfTR = createNewItem(inputData)
-    return $insideOfTable.append($insideOfTR)
 
+  const renderChecklist = function(inputData) {
+
+    $('#first').append(inputData);
   }
 
-  renderChecklist(inputData);
+  // renderChecklist(inputData);
 
-  console.log(renderChecklist(inputData));
+  // console.log(renderChecklist(inputData));
 
 });
 
