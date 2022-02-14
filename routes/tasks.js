@@ -25,18 +25,15 @@ module.exports = (db) => {
       });
   });
 
-
   //post route when submit clicked.  Send 400 error on empty field
   //text becomes a database entry.
 
-
-
   router.post('/item', (req, res) => {
-    // let newTask = req.body.text
-    const newTask = req.body
+    console.log(req.body)
+    const newTask = req.body.text
     db.query(
       `INSERT INTO tasks (user_id, category, description) VALUES
-      (1, 'Buy', $1) RETURNING *`, [newTask.text])
+      (1, 'Buy', $1) RETURNING *`, [newTask])
 
       .then(data => {
         const task = data.rows[0]
@@ -51,7 +48,34 @@ module.exports = (db) => {
       })
   })
 
-  // router.put('/item:i', (req, res) => {
+  // GET task by task ID
+  router.get("/item/:id", (req, res) => {
+    console.log(req.params)
+    let query = `SELECT * FROM tasks
+    WHERE id = ${req.params.id}
+    `;
+    // console.log(query);
+    db.query(query)
+      .then(data => {
+        const tasks = data.rows;
+        res.json({ tasks });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+
+
+  router.delete('/item/:id', (req, res) => {
+
+  })
+  // router.get('/item', (req, res) => {
+  //   console.log("hello")
+  // })
+  // // router.put('/item:i', (req, res) => {
   //   console.log(req.params)
   // })
 
