@@ -55,18 +55,6 @@ $(document).ready(function() {
   })
 
 });
-// const $todo4 = .append($checkbox, $newItem);
-
-// const renderTweets = function(tweets) {
-//   const $tweetContainer = $('.tweetcontainer');
-//   $tweetContainer.empty();
-
-//   for (let tweet of tweets) {
-//     let $returnValue = createTweetElement(tweet)
-//     $tweetcontainer.prepend($returnValue)
-//   }
-//   return $tweetContainer
-// };
 
 
 
