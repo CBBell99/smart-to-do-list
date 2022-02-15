@@ -26,32 +26,11 @@
     <!-- Our Internal JS -->
     <script type="text/javascript" src="./scripts/app.js"></script>
     <script type="text/javascript" src="./scripts/tasks.js"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 
 
 
    </head>
-
-   <script>
-  /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}</script>
-
 
   <body>
 
@@ -65,8 +44,12 @@ window.onclick = function(event) {
 
     <!-- Login Bar under Main Title   -->
 
-      <div class ="loginbar">
+      <div class ="loginbar"><div class="dropdown">
         <a href="#" class="loginbarlink">login </a>
+        <div class="dropdown-content">
+          <textarea placeholder="username"></textarea><button type="submit" id="submitbutton">Submit</button>
+        </div></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
        <a href="#" class="loginbarlink">logout </a>
         <a href="#" class="loginbarlink">register </a>
         </div>
@@ -107,16 +90,32 @@ window.onclick = function(event) {
           <td  class ="right"><input type="checkbox" id="checkbox"></td>
           <td  class ="left">
             <div class="dropdown">
+              <button class="dropbtn">LOTR</button>
+              <div class="dropdown-content">
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </div>
+            </div>
+
+
+            <!-- <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">LOTR</button>
             <div id="myDropdown" class="dropdown-content">
               <a href="#">Edit</a>
               <a href="#">Delete</a>
-            </div>
+            </div> -->
           </div></td>
         </tr>
         <tr>
           <td  class ="right"><input type="checkbox" id="checkbox"></td>
-          <td  class ="left">Harry Potter</td>
+          <td  class ="left">
+            <div class="dropdown">
+              <button class="dropbtn">Harry Potter</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#" onclick="myFunction()">Edit</a>
+                <a href="#" onclick="myFunction()">Delete</a>
+              </div>
+            </td>
         </tr>
       </table>
     </div>
