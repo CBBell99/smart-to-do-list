@@ -7,24 +7,27 @@ $(document).ready(function() {
 
 
   const createNewItem = function(data) {
-    console.log(data.tasks)
-    //     let $todo4 = `
-    //  <td   class ="right"><input type="checkbox" id="checkbox"></td>
-    //           <td class ="left">${data.content.body}</td>
+    // console.log("hello", data)
+    // let item = data
 
-
-    //           `
-    //     return $todo4
+    // console.log(item);
+    let $todo4 = `
+      <tr>
+        <td class ="right"><input type="checkbox" id="checkbox"></td>
+        <td class ="left">${data}</td></tr> `
+    return $todo4
   }
 
+  //
 
 
   // <td>CHECKBOX</td>
 
   const renderChecklist = function(inputData) {
-    // for (let item of inputData) {
-    let newItem = createNewItem(inputData)
-    $('#first').append(newItem);
+    let item = inputData.tasks[inputData.tasks.length - 1]
+
+    $('#first').append(createNewItem(item.description));
+
     // }
   }
 
