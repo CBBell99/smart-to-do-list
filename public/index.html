@@ -31,10 +31,10 @@
 
     <script>
       function myFunction() {
-        var x = document.getElementById("content");
+        let x = document.getElementById("content");
         if (x.style.display === "none") {
           x.style.display = "block";
-          document.getElementById("#user_input").reset();
+          document.getElementById("user_input").reset();
         } else {
           x.style.display = "none";
         }
@@ -69,7 +69,7 @@
           <textarea placeholder="username" id="user_input"></textarea><button  onclick="myFunction()" type="submit" id="submitbutton">Submit</button>
         </div></div>
         &nbsp;&nbsp;&nbsp;&nbsp;
-       <a href="#" class="loginbarlink">logout </a>
+       <a href="#" class="loginbarlink"  onclick="myFunction()">logout </a>
         <a href="#" class="loginbarlink">register </a>
         </div>
         <div class ='slogan'>The magic to-do list for everything.</div>
