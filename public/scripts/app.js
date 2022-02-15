@@ -3,6 +3,7 @@
 
 
 $(document).ready(function() {
+
   console.log('jQuery ready')
 
   // function to append a new list item into the table
@@ -15,6 +16,7 @@ $(document).ready(function() {
   }
 
   // function that takes the data from the POST and runs createNewItem something
+  // individual ones for each list are below for when we get to that part
   const renderChecklist = function(inputData) {
     let item = inputData.tasks[inputData.tasks.length - 1]
 
@@ -57,4 +59,23 @@ $(document).ready(function() {
 });
 
 
+// functions for each
+const addToWatch = function(inputData) {
+  let item = inputData.tasks[inputData.tasks.length - 1]
+  $('#first').append(createNewItem(item.description));
+}
 
+const addToRead = function(inputData) {
+  let item = inputData.tasks[inputData.tasks.length - 1]
+  $('#second').append(createNewItem(item.description));
+}
+
+const addToEat = function(inputData) {
+  let item = inputData.tasks[inputData.tasks.length - 1]
+  $('#third').append(createNewItem(item.description));
+}
+
+const addToBuy = function(inputData) {
+  let item = inputData.tasks[inputData.tasks.length - 1]
+  $('#fourth').append(createNewItem(item.description));
+}
