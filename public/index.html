@@ -31,6 +31,27 @@
 
    </head>
 
+   <script>
+  /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}</script>
+
 
   <body>
 
@@ -84,7 +105,14 @@
         </tr>
         <tr>
           <td  class ="right"><input type="checkbox" id="checkbox"></td>
-          <td  class ="left">LOTR</td>
+          <td  class ="left">
+            <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">LOTR</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Edit</a>
+              <a href="#">Delete</a>
+            </div>
+          </div></td>
         </tr>
         <tr>
           <td  class ="right"><input type="checkbox" id="checkbox"></td>
