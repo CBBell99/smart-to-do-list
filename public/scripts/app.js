@@ -5,12 +5,8 @@
 $(document).ready(function() {
   console.log('jQuery ready')
 
-
+  // function to append a new list item into the table
   const createNewItem = function(data) {
-    // console.log("hello", data)
-    // let item = data
-
-    // console.log(item);
     let $todo4 = `
       <tr>
         <td class ="right"><input type="checkbox" id="checkbox"></td>
@@ -18,19 +14,15 @@ $(document).ready(function() {
     return $todo4
   }
 
-  //
-
-
-  // <td>CHECKBOX</td>
-
+// function that takes the data from the POST and runs createNewItem something
   const renderChecklist = function(inputData) {
     let item = inputData.tasks[inputData.tasks.length - 1]
 
     $('#first').append(createNewItem(item.description));
 
-    // }
   }
 
+// load info and start function calls
   const loadList = function() {
     $.ajax({
       url: "/api/tasks",
@@ -40,17 +32,11 @@ $(document).ready(function() {
       renderChecklist(data)
     });
   };
-  // const loadList = function() {
-  //   $.get('/tasks/item')
-  //     .then((data) => {
-  //       renderChecklist(data.tasks)
-  //     })
-  // }
 
   loadList();
 
 
-
+// send info when pushing submit button
   $('#submit_item').on('submit', function(event) {
     event.preventDefault();
     const inputData = $('#item_input').val()
@@ -68,25 +54,7 @@ $(document).ready(function() {
       })
   })
 
-  // console.log(renderChecklist(inputData));
-
 });
-
-
-
-
-// const $todo4 = .append($checkbox, $newItem);
-
-// const renderTweets = function(tweets) {
-//   const $tweetContainer = $('.tweetcontainer');
-//   $tweetContainer.empty();
-
-//   for (let tweet of tweets) {
-//     let $returnValue = createTweetElement(tweet)
-//     $tweetcontainer.prepend($returnValue)
-//   }
-//   return $tweetContainer
-// };
 
 
 
