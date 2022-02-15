@@ -3,60 +3,58 @@
 
 
 $(document).ready(function() {
+  console.log('jQuery ready')
 
-
-  $('#submitbutton').on('click', function(event) {
-    event.preventDefault();
-    const inputData = $('#item_input').val()
-    console.log(inputData)
-  })
-
+  // function to append a new list item into the table
   const createNewItem = function(data) {
     let $todo4 = `
-      <td>CHECKBOX</td>
-      <td>${data.content.body}</td>
-    `
-    console.log(data.content.body)
-
-    // const $checkbox = $('<td>').text('checkbox');
-    // const $newItem = $('<td>').text(`${inputData.content.text}`);
-    // const $itemBox = $('<tr>').addClass('first');
-    // $itemBox.append($checkbox, $newItem);
-    // const $table = $('<table>').addClass('to_do_4')
-
+      <tr>
+        <td class ="right"><input type="checkbox" id="checkbox"></td>
+        <td class ="left">${data}</td></tr> `
     return $todo4
   }
 
-
-
+  // function that takes the data from the POST and runs createNewItem something
   const renderChecklist = function(inputData) {
+    let item = inputData.tasks[inputData.tasks.length - 1]
 
-    $('#first').append(inputData);
+    $('#first').append(createNewItem(item.description));
+
   }
 
-  renderChecklist(createNewItem)
+  // load info and start function calls
+  const loadList = function() {
+    $.ajax({
+      url: "/api/tasks",
+      method: "GET",
+      dataType: "JSON"
+    }).then(function(data) {
+      renderChecklist(data)
+    });
+  };
 
-  // renderChecklist(inputData);
+  loadList();
 
-  // console.log(renderChecklist(inputData));
+
+  // send info when pushing submit button
+  $('#submit_item').on('submit', function(event) {
+    event.preventDefault();
+    const inputData = $('#item_input').val()
+    return $.ajax({
+
+      url: "/api/tasks/item/",
+      method: "POST",
+      data: { text: inputData }
+    })
+      .then(() => {
+        console.log("sucess")
+        $("form").trigger("reset");
+        // $('#item_input').val('')
+        loadList()
+      })
+  })
 
 });
-
-
-
-
-// const $todo4 = .append($checkbox, $newItem);
-
-// const renderTweets = function(tweets) {
-//   const $tweetContainer = $('.tweetcontainer');
-//   $tweetContainer.empty();
-
-//   for (let tweet of tweets) {
-//     let $returnValue = createTweetElement(tweet)
-//     $tweetcontainer.prepend($returnValue)
-//   }
-//   return $tweetContainer
-// };
 
 
 

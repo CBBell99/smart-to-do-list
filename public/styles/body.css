@@ -84,6 +84,18 @@ input[type=checkbox] {
   left: -10px;
 
 }
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #11ad69;
+  font: inherit;
+  width: 22px;
+  height: 22px;
+  border: 0.1em solid #ffd33e;
+  place-content: center;
+  margin-bottom: 25px;
+}
 
 input[type=checkbox]:before {
   content: "";
