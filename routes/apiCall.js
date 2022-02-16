@@ -1,19 +1,31 @@
-console.log(process.env.GOOGLE);
 const request = require('request-promise');
 
 
 //hard coded search for batman. can't get process.env to work
-const options = {
-  uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
-  qs: {
-    key: 'AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U',
-    query: process.argv[2],
-    limit: 5,
-  }
-};
+// const options = {
+//   uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
+//   qs: {
+//     key: 'AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U',
+//     query: process.argv[2],
+//     limit: 5,
+//   }
+// };
 
 
 //code to grab @type of list input
+
+
+const checkGoogle = function(inputData) {
+
+  const options = {
+    uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
+    qs: {
+      key: 'AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U',
+      query: inputData,
+      limit: 5,
+    }
+  };
+
 request(options)
   .then(data => {
 
@@ -21,17 +33,37 @@ request(options)
     const arrOutput = [];
     results.forEach(arrItem => arrOutput.push(arrItem.result['@type']));
     console.log(arrOutput[0])
-    console.log(arrOutput)
-    let flatArr = arrOutput.flat()
+    // loop through above
 
     // array of search types
     const type = ['Book', 'Movie', 'MovieSeries', 'TVSeries', 'Restaurant', 'ProductModel']
 
-
-
-
-
+    for (let words of arrOutput[0]) {
+      if (words === 'Movie' || words === "MovieSeries" || words === 'TVSeries') {
+        addToWatch(inputData)
+        return
+      }
+      if (words === 'Book'){
+        addToRead(inputData)
+        return
+      }
+      if (words === 'Restaurant'){
+        addToBuy(inputData)
+        return
+      }
+      else {
+        addToBuy(inputData)
+        return
+      }
+      }
   })
+
+}
+
+console.log(checkGoogle(process.argv[2]));
+
+module.export = {checkGoogle}
+
 
 // books///
 // Old man and the sea

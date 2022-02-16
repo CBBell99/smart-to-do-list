@@ -1,6 +1,6 @@
 // Client facing scripts here
 
-
+const checkGoogle = require('../routes/apiCall.js');
 
 $(document).ready(function() {
 
@@ -17,11 +17,10 @@ $(document).ready(function() {
 
   // function that takes the data from the POST and runs createNewItem something
   // individual ones for each list are below for when we get to that part
+
   const renderChecklist = function(inputData) {
     let item = inputData.tasks[inputData.tasks.length - 1]
-
     $('#first').append(createNewItem(item.description));
-
   }
 
   // load info and start function calls
@@ -31,6 +30,7 @@ $(document).ready(function() {
       method: "GET",
       dataType: "JSON"
     }).then(function(data) {
+
       renderChecklist(data)
     });
   };
@@ -56,8 +56,6 @@ $(document).ready(function() {
       })
   })
 
-});
-
 
 // functions for each
 const addToWatch = function(inputData) {
@@ -79,3 +77,5 @@ const addToBuy = function(inputData) {
   let item = inputData.tasks[inputData.tasks.length - 1]
   $('#fourth').append(createNewItem(item.description));
 }
+
+});
