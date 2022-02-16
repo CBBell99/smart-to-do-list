@@ -6,7 +6,7 @@ const request = require('request-promise');
 const options = {
   uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
   qs: {
-    key: 'AIzaSyCsAtIKcP7ipCudYfb9Hhad7gnwz2JD9Kg',
+    key: 'AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U',
     query: process.argv[2],
     limit: 5,
   }
@@ -20,15 +20,41 @@ request(options)
     const results = JSON.parse(data).itemListElement;
     const arrOutput = [];
     results.forEach(arrItem => arrOutput.push(arrItem.result['@type']));
+    console.log(arrOutput[0])
     console.log(arrOutput)
+    let flatArr = arrOutput.flat()
+
+    // array of search types
+    const type = ['Book', 'Movie', 'MovieSeries', 'TVSeries', 'Restaurant', 'ProductModel']
+
+
 
 
 
   })
 
+// books///
+// Old man and the sea
+// Hot water music
+// I am America an so can you
 
+// Movies////
+// Dark knight rises
+// Snow piercer
+// Train to Busan
 
+// Restaurants///
 
+// Cactus club
+// Papa johns
+// East side Marios
+// McDonalds
+// Burger king
+
+// buy///
+// Air pods
+// Mac book
+// Toothpaste
 
 // request(options).then(data => { console.log(data) })  url, object }
 // 'https://kgsearch.googleapis.com/v1/entities:search?query=&key=AIzaSyCsAtIKcP7ipCudYfb9Hhad7gnwz2JD9Kg&limit=10&indent=True'
