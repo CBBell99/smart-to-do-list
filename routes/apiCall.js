@@ -1,12 +1,13 @@
-console.log(process.env.GOOGLE);
+require("dotenv").config();
 const request = require('request-promise');
 
+console.log(process.env.DB_GOOGLE);
 
 //hard coded search for batman. can't get process.env to work
 const options = {
   uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
   qs: {
-    key: 'AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U',
+    key: process.env.DB_GOOGLE,
     query: process.argv[2],
     limit: 5,
   }
