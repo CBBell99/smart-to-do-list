@@ -29,15 +29,33 @@
     <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 
 
+    <script>
+      function myFunction() {
+        let x = document.getElementById("content");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          document.getElementById("user_input").reset();
+        } else {
+          x.style.display = "none";
+        }
+      }
+      </script>
 
    </head>
 
+
+
   <body>
+    <div id="content">
+      <div>Logged in as: Alice</div>
+    </div>
 
   <!-- Top Bar
       CSS: nav.css-->
 
     <!-- Main Title - Large Header  -->
+
+
 
   <nav class='navigation'><div contenteditable></div>
       <h2>The B<span style="margin: 0px -5px 0px -5px;">i</span><span style="background-color: #b4dad1; padding: 0px 5px 10px 5px;">g</span><span style="margin: 0px -5px 0px -5px;"> </span>To-Do</h2></div>
@@ -47,10 +65,11 @@
       <div class ="loginbar"><div class="dropdown">
         <a href="#" class="loginbarlink">login </a>
         <div class="dropdown-content">
-          <textarea placeholder="username"></textarea><button type="submit" id="submitbutton">Submit</button>
+
+          <textarea placeholder="username" id="user_input"></textarea><button  onclick="myFunction()" type="submit" id="submitbutton">Submit</button>
         </div></div>
         &nbsp;&nbsp;&nbsp;&nbsp;
-       <a href="#" class="loginbarlink">logout </a>
+       <a href="#" class="loginbarlink"  onclick="myFunction()">logout </a>
         <a href="#" class="loginbarlink">register </a>
         </div>
         <div class ='slogan'>The magic to-do list for everything.</div>

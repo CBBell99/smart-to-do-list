@@ -55,3 +55,12 @@
     background-color: #11ad69;
     border: 3px solid #11ad69;
   }
+
+  #content {
+    position: absolute;
+    top: 0px;
+    right:0px;
+    color: #550e6f;
+    padding-right: 5px;
+    display: none;
+}
