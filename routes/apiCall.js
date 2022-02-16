@@ -1,9 +1,9 @@
-require("dotenv").config();
 const request = require('request-promise');
-
+require("dotenv").config({ path: "../.env" });
 console.log(process.env.DB_GOOGLE);
 
-//hard coded search for batman. can't get process.env to work
+
+// hard coded search for batman.can't get process.env to work
 const options = {
   uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
   qs: {
@@ -14,7 +14,7 @@ const options = {
 };
 
 
-//code to grab @type of list input
+//  code to grab @type of list input
 request(options)
   .then(data => {
 
@@ -24,15 +24,35 @@ request(options)
     console.log(arrOutput[0])
     console.log(arrOutput)
     let flatArr = arrOutput.flat()
-
-    // array of search types
-    const type = ['Book', 'Movie', 'MovieSeries', 'TVSeries', 'Restaurant', 'ProductModel']
-
-
-
-
-
   })
+//     // array of search types
+//     const type = ['Book', 'Movie', 'MovieSeries', 'TVSeries', 'Restaurant', 'ProductModel']
+
+    // for (let words of arrOutput[0]) {
+    //   if (words === 'Movie' || words === "MovieSeries" || words === 'TVSeries') {
+    //     addToWatch(inputData)
+    //     return
+    //   }
+    //   if (words === 'Book') {
+    //     addToRead(inputData)
+    //     return
+    //   }
+    //   if (words === 'Restaurant') {
+    //     addToBuy(inputData)
+    //     return
+    //   }
+    //   else {
+    //     addToBuy(inputData)
+    //     return
+    //   }
+    // }
+  // })
+
+
+
+
+
+
 
 // books///
 // Old man and the sea
