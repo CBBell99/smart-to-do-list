@@ -51,7 +51,7 @@ module.exports = (db) => {
 
   // GET task by ID
   router.get("/item/:id", (req, res) => {
-    console.log(req.params)
+    console.log("hello", req.params)
     let query = `SELECT * FROM tasks
     WHERE id = ${req.params.id}
     `;
