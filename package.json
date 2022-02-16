@@ -23,6 +23,8 @@
     "md5": "^2.3.0",
     "morgan": "^1.10.0",
     "pg": "^8.5.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "sass": "^1.35.1"
   },
   "devDependencies": {
