@@ -88,6 +88,22 @@ module.exports = (db) => {
       });
   })
 
+  // EDIT task by id
+  router.put('/item/:id/edit', (req, res) => {
+    console.log(req.params);
+    const queryEdit = `UPDATE tasks SET description = '123' WHERE id = ${req.params.id};` // Change 123
+    db.query(queryEdit)
+      .then(data => {
+        const tasks = data.rows;
+        res.json({ tasks });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  })
+
 
   // router.get('/item', (req, res) => {
   //   console.log("hello")
