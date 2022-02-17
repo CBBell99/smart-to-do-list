@@ -119,11 +119,11 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
 
   // function that takes the data from the POST and runs createNewItem something
   // individual ones for each list are below for when we get to that part
-  const renderChecklist = function(inputData) {
-    let item = inputData.tasks[inputData.tasks.length - 1]
-    $('#first').append(createNewItem(item.description));
+  // const renderChecklist = function(inputData) {
+  //   let item = inputData.tasks[inputData.tasks.length - 1]
+  //   $('#first').append(createNewItem(item.description));
 
-  }
+  // }
 
   // load info and start function calls
   const loadList = function() {
@@ -132,7 +132,7 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
       method: "GET",
       dataType: "JSON"
     }).then(function(data) {
-      renderChecklist(data)
+      // renderChecklist(data)
       // iterate through array
     });
   };
@@ -167,22 +167,26 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
     })
   })
 
+  // Delete
+  $(document).on('click', '.deletebtn', function (e) {
+    e.preventDefault()
+    $(this).parents('.left').parent().remove();
 
-
+  });
 
   // Delete
-  $(function () {
-    console.log('Inside del function');
-    $(".deletebtn").click(function () {
-      $(this).parents('.left').parent().remove();
+  // $(function () {
+  //   console.log('Inside del function');
+  //   $(".deletebtn").on('click', function () {
+  //     $(this).parents('.left').parent().remove();
 
-    });
-  });
+  //   });
+  // });
 
   // Cross out
   $(function () {
     console.log('Inside cross out');
-    $('input:checkbox').on('change', function () {
+    $(document).on('change', 'input:checkbox', function () {
       if ($(this).is(':checked')) {
         console.log("checked inside if");
         $(this).parent().siblings('.left').find('.dropbtn').css('text-decoration', 'line-through');
