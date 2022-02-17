@@ -1,7 +1,5 @@
 // Client facing scripts here
 
-
-
 $(document).ready(function() {
 
   const addToWatch = function(inputData) {
@@ -31,74 +29,34 @@ $(document).ready(function() {
     buy: addToBuy
   }
 
-  const checkGoogle = function(userInput) {
-
-    const options = {
-      uri: 'https://kgsearch.googleapis.com/v1/entities:search?',
-      qs: {
-        key: 'AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U',
-        query: userInput,
-        limit: 5,
-
-      }
-    }
-
-const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U&query=${userInput}`
-
-
-
-
-
-
-
+const checkGoogle = function(userInput) {
+  const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U&query=${userInput}`
     return $.get(url)
       .then(data => {
-
-        // const results = JSON.parse(data).itemListElement;
         const results = data.itemListElement;
         const arrOutput = [];
-        console.log('data', data)
         results.forEach(arrItem => arrOutput.push(arrItem.result['@type']));
-        console.log(arrOutput[0])
-        // console.log(arrOutput)
-        // let flatArr = arrOutput.flat()
-
-        // array of search types
-        // const type = ['Book', 'Movie', 'MovieSeries', 'TVSeries', 'Restaurant', 'ProductModel']
 
         for (let words of arrOutput[0]) {
           if (words === 'Movie' || words === "MovieSeries" || words === 'TVSeries') {
-            // addToWatch(inputData)
             return 'movie'
-
-
-            // retur
           }
           if (words === 'Book' || words === 'BookSeries') {
             console.log('Book', userInput)
-            // addToRead(inputData)
             return 'book'
-            // return
           }
           if (words === 'Restaurant') {
             console.log("Eat", userInput)
-            // addToEat(inputData)
             return 'eat'
-            // return
           }
         }
-          // addToBuy(inputData)
             return 'buy'
-            // return
-
       })
   }
 
-  console.log('jQuery ready')
-
-  // function to append a new list item into the table
+  // Append a new list item into the table
   const createNewItem = function(data) {
-    let $todo4 = `
+    let $newItem = `
     <tr>
     <td  class ="right"><input type="checkbox" id="checkbox"></td>
     <td  class ="left">
@@ -109,21 +67,10 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
           <a class="deletebtn">Delete</a>
         </div>
       </div>
-
-
-
     </div></td>
   </tr> `
-    return $todo4
+    return $newItem
   }
-
-  // function that takes the data from the POST and runs createNewItem something
-  // individual ones for each list are below for when we get to that part
-  // const renderChecklist = function(inputData) {
-  //   let item = inputData.tasks[inputData.tasks.length - 1]
-  //   $('#first').append(createNewItem(item.description));
-
-  // }
 
   // load info and start function calls
   const loadList = function() {
@@ -137,9 +84,8 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
     });
   };
 
+  // Load list on page start
   loadList();
-
-
 
   // send info when pushing submit button
   $('#submit_item').on('submit', function(event) {
@@ -156,13 +102,8 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
                 category: type}
       })
         .then((res) => {
-
           $("form").trigger("reset");
-
           thingToDo[cateogoryType](inputData);
-          // $('#item_input').val('')
-          // checkGoogle(res.description)
-          // loadList()
         })
     })
   })
@@ -173,15 +114,6 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
     $(this).parents('.left').parent().remove();
 
   });
-
-  // Delete
-  // $(function () {
-  //   console.log('Inside del function');
-  //   $(".deletebtn").on('click', function () {
-  //     $(this).parents('.left').parent().remove();
-
-  //   });
-  // });
 
   // Cross out
   $(function () {
@@ -196,9 +128,6 @@ const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410Nq
       }
     });
   });
-
-
-
 
 });
 
