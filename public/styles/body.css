@@ -69,6 +69,7 @@ h4 {
   text-align: left;
   padding-left: 10px;
   vertical-align: bottom;
+  word-wrap:break-word;
 }
 
 .right {
