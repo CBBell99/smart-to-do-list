@@ -28,9 +28,6 @@ request(options)
     const type = ['Book', 'Movie', 'MovieSeries', 'TVSeries', 'Restaurant', 'ProductModel']
 
 
-
-
-
   })
 
 // books///
