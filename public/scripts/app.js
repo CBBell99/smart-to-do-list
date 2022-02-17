@@ -31,8 +31,8 @@ $(document).ready(function() {
     buy: addToBuy
   }
 
-const checkGoogle = function(userInput) {
-  const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyB410NqEuxJXSgASG7AEB2NvwtlI2StP4U&query=${userInput}`
+  const checkGoogle = function(userInput) {
+    const url = `https://kgsearch.googleapis.com/v1/entities:search?key=AIzaSyAVGQguDWbKsNRst24eV_cU2tb5M9KbBVw&query=${userInput}`
     return $.get(url)
       .then(data => {
         const results = data.itemListElement;
@@ -52,24 +52,28 @@ const checkGoogle = function(userInput) {
             return 'eat'
           }
         }
-            return 'buy'
+        return 'buy'
       })
   }
 
   // Append a new list item into the table
   const createNewItem = function(data) {
     let $newItem = `
-    <tr>
+    <tr id="allFacets">
     <td  class ="right"><input type="checkbox" id="checkbox"></td>
     <td  class ="left">
       <div class="dropdown">
         <button class="dropbtn">${data}</button>
         <div class="dropdown-content">
-          <a>Edit</a>
           <a class="deletebtn">Delete</a>
+          <h5>Edit</h5>
+          <a class="addToWatch">Watch</a>
+          <a class="addToRead">Read</a>
+          <a class="addToEat">Eat</a>
+          <a class="addToBuy">Buy</a>
         </div>
       </div>
-    </div></td>
+    </td>
   </tr> `
     return $newItem
   }
@@ -95,13 +99,15 @@ const checkGoogle = function(userInput) {
     event.preventDefault();
     console.log('we are here!')
     const inputData = $('#item_input').val()
-    checkGoogle(inputData).then ((type) => {
+    checkGoogle(inputData).then((type) => {
       cateogoryType = type;
       return $.ajax({
         url: "/api/tasks/item",
         method: "POST",
-        data: { text: inputData,
-                category: type}
+        data: {
+          text: inputData,
+          category: type
+        }
       })
         .then((res) => {
           $("form").trigger("reset");
@@ -111,32 +117,52 @@ const checkGoogle = function(userInput) {
   })
 
   // Delete
-  $(document).on('click', '.deletebtn', function (e) {
+  $(document).on('click', '.deletebtn', function(e) {
     e.preventDefault()
     $(this).parents('.left').parent().remove();
 
   });
 
- // Edit Watch
- $(document).on('click', '.addToWatch', function (e) {
-  e.preventDefault()
-  addtoWatch($(this).parents('.left'));
-  $(this).parents('.left').parent().remove();
+  // Edit Watch
+  $(document).on('click', '.addToWatch', function(e) {
+    e.preventDefault()
+    const temp = e.target.parentElement.parentElement.parentElement.parentElement
+    $(this).parent().parent().parent().parent().remove()
+    // debugger
+    $('#first').append(temp);
   });
 
-  $(document).on('click', '.addToRead', function (e) {
+  // Edit Read
+  $(document).on('click', '.addToRead', function(e) {
     e.preventDefault()
-    addtoRead($(this).parents('.left'));
-    $(this).parents('.left').parent().remove();
-    });
+    const temp = e.target.parentElement.parentElement.parentElement.parentElement
+    $(this).parent().parent().parent().parent().remove()
+    // debugger
+    $('#second').append(temp);
+  });
 
+  // Edit Eat
+  $(document).on('click', '.addToEat', function(e) {
+    e.preventDefault()
+    const temp = e.target.parentElement.parentElement.parentElement.parentElement
+    $(this).parent().parent().parent().parent().remove()
+    // debugger
+    $('#third').append(temp);
+  });
 
-
+  // Edit Buy
+  $(document).on('click', '.addToBuy', function(e) {
+    e.preventDefault()
+    const temp = e.target.parentElement.parentElement.parentElement.parentElement
+    $(this).parent().parent().parent().parent().remove()
+    // debugger
+    $('#fourth').append(temp);
+  });
 
   // Cross out
-  $(function () {
+  $(function() {
     console.log('Inside cross out');
-    $(document).on('change', 'input:checkbox', function () {
+    $(document).on('change', 'input:checkbox', function() {
       if ($(this).is(':checked')) {
         console.log("checked inside if");
         $(this).parent().siblings('.left').find('.dropbtn').css('text-decoration', 'line-through');
