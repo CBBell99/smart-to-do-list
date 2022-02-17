@@ -117,6 +117,22 @@ const checkGoogle = function(userInput) {
 
   });
 
+ // Edit Watch
+ $(document).on('click', '.addToWatch', function (e) {
+  e.preventDefault()
+  addtoWatch($(this).parents('.left'));
+  $(this).parents('.left').parent().remove();
+  });
+
+  $(document).on('click', '.addToRead', function (e) {
+    e.preventDefault()
+    addtoRead($(this).parents('.left'));
+    $(this).parents('.left').parent().remove();
+    });
+
+
+
+
   // Cross out
   $(function () {
     console.log('Inside cross out');
