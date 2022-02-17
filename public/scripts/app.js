@@ -2,6 +2,8 @@
 
 $(document).ready(function() {
 
+
+
   const addToWatch = function(inputData) {
     let item = inputData
     $('#first').append(createNewItem(item));
@@ -128,6 +130,7 @@ const checkGoogle = function(userInput) {
       }
     });
   });
+
 
 });
 
