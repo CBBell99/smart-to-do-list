@@ -143,6 +143,15 @@ input[type=checkbox]:checked:after {
 .dropdown {
   position: relative;
   display: inline-block;
+
+}
+
+h5 {
+  color: #b4dad1;
+  background-color: #11ad69;
+  font-size: 24px;
+  margin: 0px;
+  padding: 12px 16px;
 }
 
 /* Dropdown Content (Hidden by Default) */
