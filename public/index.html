@@ -22,11 +22,12 @@
 
     <!-- External JS -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/request/2.88.2/index.js" integrity="sha512-O60BQ7RB98i6wt8wKRedltZgdPNTd8neJpujYb+/xJBKAPJlT101TU8iy5U+/h/rYIp4FAn2Ma3us6cWzEhJmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
     <!-- Our Internal JS -->
     <script type="text/javascript" src="./scripts/app.js"></script>
-    <script type="text/javascript" src="./scripts/tasks.js"></script>
-    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <!-- <script type="text/javascript" src="./scripts/tasks.js"></script> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/api.js"></script> -->
 
 
     <script>
@@ -66,7 +67,7 @@
         <a href="#" class="loginbarlink">login </a>
         <div class="dropdown-content">
 
-          <textarea placeholder="username" id="user_input"></textarea><button  onclick="myFunction()" type="submit" id="submitbutton">Submit</button>
+          <input placeholder="username" id="user_input"></input><button  onclick="myFunction()" type="submit" id="submitbutton">Submit</button>
         </div></div>
         &nbsp;&nbsp;&nbsp;&nbsp;
        <a href="#" class="loginbarlink"  onclick="myFunction()">logout </a>
@@ -83,8 +84,8 @@
          <h3><img class ="imgResize" src="https://github.com/CBBell99/smart-to-do-list/blob/master/pictures/logoimage.png?raw=true">
            What do you need to remember?</h3>
           <div class = "input">
-            <form class="center" method="POST" id="submit_item">
-              <textarea name="text" id="item_input"  type="text" placeholder="Type in an item here."></textarea>
+            <form class="center" method="POST" id="submit_item" action="/api/tasks/item">
+              <input name="text" id="item_input"  type="text" placeholder="Type in an item here."></input>
              <button type="submit" id="submitbutton">Submit</button>
             </form>
           </div>
@@ -117,12 +118,7 @@
             </div>
 
 
-            <!-- <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">LOTR</button>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="#">Edit</a>
-              <a href="#">Delete</a>
-            </div> -->
+
           </div></td>
         </tr>
         <tr>

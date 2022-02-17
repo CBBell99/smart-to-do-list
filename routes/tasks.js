@@ -29,16 +29,19 @@ module.exports = (db) => {
   //post route when submit clicked.  Send 400 error on empty field
   //text becomes a database entry.
 
+
+
   router.post('/item', (req, res) => {
     console.log(req.body)
     const newTask = req.body.text
+    const newCat = req.body.category
     db.query(
       `INSERT INTO tasks (user_id, category, description) VALUES
-      (1, 'Buy', $1) RETURNING *`, [newTask])
+      (1, $2, $1) RETURNING *`, [newTask, newCat])
 
       .then(data => {
         const task = data.rows[0]
-        console.log(task.description)
+        // console.log(task.description)
         res.json({ task });
       })
       .catch(err => {
@@ -51,7 +54,7 @@ module.exports = (db) => {
 
   // GET task by ID
   router.get("/item/:id", (req, res) => {
-    console.log("hello", req.params)
+    // console.log("hello", req.params)
     let query = `SELECT * FROM tasks
     WHERE id = ${req.params.id}
     `;
