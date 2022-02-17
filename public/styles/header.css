@@ -4,6 +4,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  background-color: #b4dad1;
   }
 
   h3 {
@@ -63,4 +64,5 @@
     color: #550e6f;
     padding-right: 5px;
     display: none;
+    background-color: #b4dad1;
 }
