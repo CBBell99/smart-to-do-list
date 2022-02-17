@@ -27,39 +27,38 @@ Update over discord when we’re working on something
 
 #### Stanislav:
 -[x] Look into API - “ investigate how to balance the accurate categorization of items with having to deal with multiple API endpoints”
--[] Route Set Up
+-[x] Route Set Up
 
 #### Chris: 
 -[x] Look at setting up our github - following Francis’ folders 
 -[x] Database wireframe
--[] Route Set Up  
--[] Databasing Schema / User set up 
+-[x] Route Set Up  
+-[x] Databasing Schema / User set up 
 
 #### Lindsay: 
 -[x] Create wireframing 
--[] User Scenarios 
--[] HTML/CSS set up 
+-[x] User Scenarios 
+-[x] HTML/CSS set up 
 
 ### Steps: 
 - [x] Pick a project 
 - [x] User Stories
-- [ ] User Scenarios 
+- [x] User Scenarios 
 - [x] ERD
-- [ ] Routes
+- [x] Routes
 - [x] Wireframing 
-- [ ] Create a document of all of the things we need to code?
-- [ ] Set up HTML / CSS - framework for to do lists
-- [ ] Set up Javascript -  form to push to page 
-- [ ] Set up four categories based on input 
-- [ ] Set up APIs based on those inputs once working
-- [ ] Set up database to store information
+- [x] Create a document of all of the things we need to code?
+- [x] Set up HTML / CSS - framework for to do lists
+- [x] Set up Javascript -  form to push to page 
+- [x] Set up four categories based on input 
+- [x] Set up APIs based on those inputs once working
+- [x] Set up database to store information
 
 What are the pages we need?
 
-Index 
-CSS Fies 
-Server file 
-Helper Functions (refractor)
+- [x]Index 
+- [x]CSS Fies 
+- [x]Server file 
 
 
 ### Things to consider:
