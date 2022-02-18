@@ -16,9 +16,14 @@ You can edit, delete and check off items that are added to the to-do lists. The 
 
 ## Screenshots
 
+### Main page awaiting input submit
 !["Main page awaiting input submit"](https://github.com/CBBell99/smart-to-do-list/blob/master/pictures/Mainpagewithinput.png)
-!["Complete and Delete"](https://github.com/CBBell99/smart-to-do-list/blob/master/pictures/crossoutanddelete.png)
-!["Site with populated and edited lists"](https://github.com/CBBell99/smart-to-do-list/blob/master/pictures/withadded.png)
+
+### App overview and functionality
+!["App overview and functionality"](https://github.com/CBBell99/smart-to-do-list/blob/feature/edit/pictures/Overview_animation.gif)
+
+### Delete and Edit function
+!["Delete and Edit"](https://github.com/CBBell99/smart-to-do-list/blob/feature/edit/pictures/Delete_and_Edit_animation.gif)
 
 ## Dependencies
 
