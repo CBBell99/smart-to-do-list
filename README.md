@@ -4,11 +4,11 @@
 This website auto-populates to do lists by running the input thorugh an API process. By entering data, the website will sort your information into one of four categories where you can then check it off, resort it, or delete it. 
 
 ## Creators 
-This website was created in February 2022 by Christopher Bell, Stanislav Po, and Lindsay Tannahill as a part of their Lighthouse Labs midterm. 
+This website was created in February 2022 by Christopher Bell, Stanislav Plotnikov, and Lindsay Tannahill as a part of their Lighthouse Labs midterm. 
 
-- CSS & Design by Lindsay Tannahill
-- Backend and databasing by Christopher Bell
-- Functionality and debugging by Stanislav PO
+- CSS & Design by [Lindsay Tannahill](https://github.com/lbtannahill) 
+- Backend and databasing by [Christopher Bell](https://github.com/CBBell99)
+- Functionality and debugging by [Stanislav Plotnikov](https://github.com/Stas74)
 
 ## Features
 

@@ -161,13 +161,10 @@ $(document).ready(function() {
 
   // Cross out
   $(function() {
-    console.log('Inside cross out');
     $(document).on('change', 'input:checkbox', function() {
       if ($(this).is(':checked')) {
-        console.log("checked inside if");
         $(this).parent().siblings('.left').find('.dropbtn').css('text-decoration', 'line-through');
       } else {
-        console.log("checked inside else");
         $(this).parent().siblings('.left').find('.dropbtn').css('text-decoration', 'none');
       }
     });
